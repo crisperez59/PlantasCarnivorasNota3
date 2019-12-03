@@ -12,7 +12,7 @@ router.register('plantas', PlantaViewSet)
 urlpatterns = [
     path('', views.index, name='index'),
 
-     path('API', include(router.urls)),
+    path('API', include(router.urls)),
     path('api-auth/', include('rest_framework.urls'), name="rest_framework"),
 
 
