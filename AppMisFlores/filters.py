@@ -8,9 +8,3 @@ class PlantaFilter(django_filters.FilterSet):
         labels = {'tipoPlanta': 'Tipo de Planta'}
         
 
-#class ClienteFilter(django_filters.FilterSet):
-#    class Meta:
-#        model = Alumno
-#        fields = ['activo',]
-#        labels = {'activo': 'activo'}
-                

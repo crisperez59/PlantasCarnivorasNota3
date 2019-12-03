@@ -17,18 +17,18 @@ urlpatterns = [
 
 
     
-    path('agregarUsuario', views.RegistroUsuario.as_view(), name='agregarUsuario'), #create
-    path('borrarUsuario/<int:usuarioId>', views.borrarUsuario,), #delete
-    path('editarUsuario/<int:usuarioId>', views.editarUsuario), #edit
-    path('listarUsuariosFull', views.listarUsuarioFull, name="listarUsuariosFull"), #readFull
-    path('listarUsuarios', views.listarUsuarios, name='listarUsuarios'), #read
+    path('agregarUsuario', views.RegistroUsuario.as_view(), name='agregarUsuario'),
+    path('borrarUsuario/<int:usuarioId>', views.borrarUsuario,), 
+    path('editarUsuario/<int:usuarioId>', views.editarUsuario), 
+    path('listarUsuariosFull', views.listarUsuarioFull, name="listarUsuariosFull"), 
+    path('listarUsuarios', views.listarUsuarios, name='listarUsuarios'), 
 
 
-    path('agregarPlanta', views.RegistroPlanta.as_view(), name='agregarPlanta'), #create
-    path('listarPlantas', views.listarPlantas, name='search'), #read
-    path('borrarPlanta/<int:plantaId>', views.borrarPlanta), #delete
-    path('editarPlanta/<int:plantaId>', views.editarPlanta), #edit
-    path('listarPlantasFull', views.listarPlantasFull, name="listarPlantasFull"), #readFull
+    path('agregarPlanta', views.RegistroPlanta.as_view(), name='agregarPlanta'), 
+    path('listarPlantas', views.listarPlantas, name='search'),  #filtros (Carnivora, No Carnivora)
+    path('borrarPlanta/<int:plantaId>', views.borrarPlanta), 
+    path('editarPlanta/<int:plantaId>', views.editarPlanta), 
+    path('listarPlantasFull', views.listarPlantasFull, name="listarPlantasFull"), 
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

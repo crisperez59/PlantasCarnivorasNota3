@@ -5,11 +5,6 @@ from django.contrib.auth.forms import UserCreationForm
 from rest_framework import routers, serializers, viewsets
 
 
-#class UsuarioForm(forms.ModelForm):
-#    class Meta:
-#        model = Usuario
-#        fields = ['usuario','prime','rut', 'celular']
-#        labels = {'usuario.nombreCompleto:usuario.nombreCompleto','curso.nombre:curso.nombre','fechaMatricula:fechaMatricula','activo:activo'}
 
 class PlantaForm(forms.ModelForm):
     class Meta:
