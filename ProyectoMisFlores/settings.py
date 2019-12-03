@@ -36,9 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'AppMisFlores',
-    'rest_framework',
     'django.contrib.staticfiles',
+    'AppMisFlores',
+    'rest_framework',  
+    'django_filters'  
 ]
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
