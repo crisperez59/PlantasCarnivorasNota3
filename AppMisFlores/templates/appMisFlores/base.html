@@ -1,0 +1,145 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Titulo -->
+  <title>Plantas - {% block title %} Title {% endblock %}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+
+  {% block head %}
+  {% endblock %}
+</head>
+
+
+<body class="bodyPlantas">
+  {% block header %}
+  <div class="header">
+    <div class="logo">
+      <img src="{% static 'img/1568311660151-compressor.png' %}" alt="LOGO_Plantas_Carnivoras"
+        style="width: 50px; height: 40px;">
+      <div>
+        <h1>Plantas carnivoras chile</h1>
+      </div>
+    </div>
+    
+    <div class="navegacion">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'search' %}">Plantas</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="sustratos.html">Sustratos</a>
+        </li>
+        {% if user.is_superuser %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Herramientas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'agregarUsuario' %}">agregarUsuario</a>
+                        <a class="dropdown-item" href="{% url 'listarUsuarios' %}">Listar Usuarios Full</a>
+                        <a class="dropdown-item" href="{% url 'listarUsuariosFull' %}">Listar Usuarios Full</a>
+                        <a class="dropdown-item" href="{% url 'agregarPlanta' %}">Agregar Plantas</a>
+                        <a class="dropdown-item" href="{% url 'search' %}">Listar Plantas</a>
+                        <a class="dropdown-item" href="{% url 'listarPlantasFull' %}">Listar Plantas Full</a>
+                        
+                    </div>
+                </li>
+            {% endif %}
+             {% if user.is_authenticated %}
+                    <span class="nav-item">
+                        <p class="nav_link"> Bienvenido, {{ user.username }} ! </p>
+                    </span>
+                    <li class="nav-item">
+                        <a href="{% url 'logout' %}" class="nav-link">Cerrar Sesion</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                            <a href="{% url 'login' %}" class="nav-link">Login</a>
+                        </li>
+                    {% endif %}
+      </ul>
+    </div>
+  </div>
+  {% endblock %}
+  {% block content %}
+
+
+  <div class="container">
+
+    <div class="container1">
+      <div class="box">
+        <div class="img1Bx">
+          <img src="{% static 'img/Nepenthes_villosa-compressor.jpg' %}" alt="" width="300" height="300">
+        </div>
+        <div class="content">
+          <h2>Nepenthes</h2>
+          <p>Son plantas carnivoras con forma de jarro. Su metodo de captura es con un liquido siempre
+            presente dentro de ellas.</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img2Bx">
+          <img src="{% static 'img/Drosera_capensis_bend-compressor.jpg' %}" alt="" width="300" height="300">
+        </div>
+        <div class="content">
+          <h2>Droseras </h2>
+          <p>Sus hojas son como tentaculos con liquido brillante en sus puntas para capturar a sus presas</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img3Bx">
+          <img src="{% static 'img/il_794xN.1223359774_o0mg-compressor.jpg'%}" alt="" width="300" height="300">
+        </div>
+        <div class="content">
+          <h2>Dionea</h2>
+          <p>Sus hojas terminan en algo que se parece a unos dientes. atrae a sus presas con un liquido dulce
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+  {% endblock %}
+</body>
+
+
+{% block social %}
+<div class="justify-content-center social">
+  <ul class="nav">
+    <li class="nav-item"><a href="http://localhost:8000/admin/login/?next=/admin/" target="_blank" class="icon-pedir">Ingresar</a></li>
+    <li class="nav-item"><a href="http://www.facebook.com" target="_blank" class="icon-facebook">facebook</a></li>
+    <li class="nav-item"><a href="http://www.twitter.com" target="_blank" class="icon-twitter">twitter</a></li>
+    <li class="nav-item"><a href="http://www.googleplus.com" target="_blank" class="icon-googleplus">google</a></li>
+    <li class="nav-item"><a href="http://www.instagram.com" target="_blank" class="icon-instagram">instagram</a></li>
+  </ul>
+</div>
+{% endblock %}
+
+<!-- Scripts -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

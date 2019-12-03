@@ -1,0 +1,23 @@
+{% extends 'appMisFlores/base.html' %}
+{% load staticfiles %}
+<body>
+
+{% block content %}
+<!--    Codigo python  -->
+
+    <h1>Inscribir Usuario</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="container flex-column">
+            {% csrf_token %}
+            {{form}}
+            <hr>
+            <button class="center-xs" type="submit">Grabar</button> 
+        </div>
+    
+    </form>
+<!--    Fin Codigo python  -->
+
+{% endblock %}
+
+</body>
+</html>

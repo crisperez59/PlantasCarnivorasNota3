@@ -1,0 +1,22 @@
+{% extends 'appMisFlores/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    {% for planta in filter.qs %}
+        {% if planta.imagen %}
+        <!-- Proyecto -->
+        <div class="row planta">   
+            <div class="col-lg-3 col-md-4 offset-lg-1">
+                <img class="img-fluid" src="{{planta.imagen.url}}" alt="">
+            </div>
+            <div class="col-lg-7 col-md-8">
+                <h2 class="section-heading title">{{planta.nombre}}</h2>   
+                <p>{{planta.tipoPlanta}}</p>
+                <p>{{planta.descripcion}}</p>
+                
+            </div>
+        </div>
+        </br>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

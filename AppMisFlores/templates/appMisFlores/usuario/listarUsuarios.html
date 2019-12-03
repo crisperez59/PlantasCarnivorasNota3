@@ -1,0 +1,34 @@
+{% extends 'appMisFlores/base.html' %}
+{% load staticfiles %}
+</head>
+<body>
+
+{% block content %}
+<!--    Codigo python  -->
+    <h1>Listar Usuarios full</h1>
+    <ul>
+        {% for u in usuarios %}
+        <!-- Proyecto -->
+        <div class="row planta">   
+            <div class="col-lg-7 col-md-8">
+                
+            </div>
+
+            <div class="col-lg-7 col-md-8">
+                
+                <p>{{u.username}}, {{u.email}} , {{u.first_name}}, {{u.last_name}}  </p>
+                
+            </div>
+        </div>
+        </br>
+        {% endfor %}
+
+        
+    </ul>
+  <!--   Fin Codigo python  -->
+ {% endblock %}   
+   
+   
+  
+</body>
+</html>

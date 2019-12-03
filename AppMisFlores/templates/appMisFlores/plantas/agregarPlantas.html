@@ -1,0 +1,26 @@
+{% extends 'appMisFlores/base.html' %}
+{% load staticfiles %}
+
+<body>
+
+{% block content %}
+<!--    Codigo python  -->
+<div class="container center-xs" style="height: 400px">
+
+    <h1>Agregar Planta</h1>
+    <form method="POST" enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{form.as_p}}
+        
+    <button type="submit">Grabar</button>        
+    <br>
+    
+    </form>
+    
+</div>
+{% endblock  %}
+<!--    Fin Codigo python  -->
+
+
+</body>
+</html>
